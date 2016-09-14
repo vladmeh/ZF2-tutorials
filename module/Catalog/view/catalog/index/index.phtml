@@ -1,0 +1,10 @@
+<h1>Catalog</h1>
+
+<?php foreach ($this->products as $product): ?>
+    <article>
+        <h1 id="post<?= $product->getId() ?>"><?= $product->getTitle() ?></h1>
+        <p>
+            <?= $product->getText() ?>
+        </p>
+    </article>
+<?php endforeach ?>
