@@ -1,15 +1,18 @@
 <?php
 // Filename: /module/Blog/config/module.config.php
 return array(
+    /*
+    // Set is filename: /config/autoload/db.local.php
     'db' => array(
         'driver'         => 'Pdo',
-        'username'       => 'root',  //edit this
-        'password'       => '',  //edit this
-        'dsn'            => 'mysql:dbname=db1057313_alphahyd;host=localhost',
+        'username'       => 'SECRET_USERNAME',  //edit this
+        'password'       => 'SECRET_PASSWORD',  //edit this
+        'dsn'            => 'mysql:dbname=blog;host=localhost',
         'driver_options' => array(
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         )
     ),
+    */
     'service_manager' => array(
         'factories' => array(
             'Blog\Mapper\PostMapperInterface'   => 'Blog\Factory\ZendDbSqlMapperFactory',
@@ -27,7 +30,6 @@ return array(
             'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory'
         )
     ),
-    // This lines opens the configuration for the RouteManager
     'router' => array(
         // Open configuration for all possible routes
         'routes' => array(

@@ -44,7 +44,7 @@ class ZendDbSqlMapper implements ProductMapperInterface
     public function findAll()
     {
         $sql    = new Sql($this->dbAdapter);
-        $select = $sql->select('posts');
+        $select = $sql->select('products');
 
         $stmt   = $sql->prepareStatementForSqlObject($select);
         $result = $stmt->execute();
