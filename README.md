@@ -75,3 +75,39 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
+
+### Error
+
+The tutorial is missing this part.
+
+The tutorial only says:
+
+> As you know from previous chapters, whenever we have a required parameter we need to write a factory for the class. Go ahead and create a factory for our mapper implementation.
+
+<http://zf2.readthedocs.io/en/latest/in-depth-guide/zend-db-sql-zend-stdlib-hydrator.html#writing-the-mapper-implementation>
+
+You need to create a factory for the ZendDbSqlMapper: Create /Blog/src/Blog/Factory/ZendDbSqlMapperFactory.php
+
+
+    <?php
+    // Filename: /Blog/src/Blog/Factory/ZendDbSqlMapperFactory.php
+    namespace Blog\Factory;
+    
+    use Blog\Mapper\ZendDbSqlMapper;
+    use Zend\ServiceManager\FactoryInterface;
+    use Zend\ServiceManager\ServiceLocatorInterface;
+    
+    class ZendDbSqlMapperFactory implements FactoryInterface
+    {
+        /**
+        * Create service
+        *
+        * @param ServiceLocatorInterface $serviceLocator
+        *
+        * @return mixed
+        */
+        public function createService(ServiceLocatorInterface $serviceLocator)
+        {
+            return new ZendDbSqlMapper($serviceLocator->get('Zend\Db\Adapter\Adapter'));
+        }
+    }

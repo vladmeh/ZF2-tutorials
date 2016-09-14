@@ -1,9 +1,20 @@
 <?php
 // Filename: /module/Blog/config/module.config.php
 return array(
+    'db' => array(
+        'driver'         => 'Pdo',
+        'username'       => 'root',  //edit this
+        'password'       => '',  //edit this
+        'dsn'            => 'mysql:dbname=db1057313_alphahyd;host=localhost',
+        'driver_options' => array(
+            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        )
+    ),
     'service_manager' => array(
         'factories' => array(
-            'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory'
+            'Blog\Mapper\PostMapperInterface'   => 'Blog\Factory\ZendDbSqlMapperFactory',
+            'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory',
+            'Zend\Db\Adapter\Adapter'           => 'Zend\Db\Adapter\AdapterServiceFactory'
         )
     ),
     'view_manager' => array(
