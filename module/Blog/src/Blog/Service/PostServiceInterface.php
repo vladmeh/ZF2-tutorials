@@ -38,4 +38,13 @@ interface PostServiceInterface
      * @return PostInterface
      */
     public function savePost(PostInterface $blog);
+
+    /**
+     * Should delete a given implementation of the PostInterface and return true if the deletion has been
+     * successful or false if not.
+     *
+     * @param  PostInterface $blog
+     * @return bool
+     */
+    public function deletePost(PostInterface $blog);
 }

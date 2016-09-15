@@ -28,7 +28,8 @@ return array(
     'controllers' => array(
         'factories' => array(
             'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory',
-            'Blog\Controller\Write' => 'Blog\Factory\WriteControllerFactory'
+            'Blog\Controller\Write' => 'Blog\Factory\WriteControllerFactory',
+            'Blog\Controller\Delete' => 'Blog\Factory\DeleteControllerFactory'
         )
     ),
     'router' => array(
@@ -71,7 +72,33 @@ return array(
                                 'action'     => 'add'
                             )
                         )
-                    )
+                    ),
+                    'edit' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                            'route'    => '/edit/:id',
+                            'defaults' => array(
+                                'controller' => 'Blog\Controller\Write',
+                                'action'     => 'edit'
+                            ),
+                            'constraints' => array(
+                                'id' => '\d+'
+                            )
+                        )
+                    ),
+                    'delete' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                            'route'    => '/delete/:id',
+                            'defaults' => array(
+                                'controller' => 'Blog\Controller\Delete',
+                                'action'     => 'delete'
+                            ),
+                            'constraints' => array(
+                                'id' => '\d+'
+                            )
+                        )
+                    ),
                 )
             )
         )
