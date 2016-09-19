@@ -82,7 +82,7 @@ return array(
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'ru_RU',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
@@ -116,6 +116,61 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
+            ),
+        ),
+    ),
+    'navigation' => array(
+        'default' => array(
+            array(
+                'label' => 'Home',
+                'route' => 'home',
+            ),
+            array(
+                'label' => 'Blog',
+                'route' => 'blog',
+                'pages' => array(
+                    array(
+                        'label' => 'Detail',
+                        'route' => 'blog/detail',
+                        'action' => 'detail',
+                    ),
+                    array(
+                        'label' => 'Add',
+                        'route' => 'blog/add',
+                        'action' => 'add',
+                    ),
+                    array(
+                        'label' => 'Edit',
+                        'route' => 'blog/edit',
+                        'action' => 'edit',
+                    ),
+                    array(
+                        'label' => 'Delete',
+                        'route' => 'blog/delete',
+                        'action' => 'delete',
+                    ),
+                ),
+            ),
+            array(
+                'label' => 'Album',
+                'route' => 'album',
+                'pages' => array(
+                    array(
+                        'label' => 'Add',
+                        'route' => 'album',
+                        'action' => 'add',
+                    ),
+                    array(
+                        'label' => 'Edit',
+                        'route' => 'album',
+                        'action' => 'edit',
+                    ),
+                    array(
+                        'label' => 'Delete',
+                        'route' => 'album',
+                        'action' => 'delete',
+                    ),
+                ),
             ),
         ),
     ),

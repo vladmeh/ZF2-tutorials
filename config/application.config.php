@@ -10,8 +10,8 @@ return array(
         'Application',
         'DOMPDFModule',
         'QuTcPdf',
-        'Catalog',
-        'Blog'
+        'Blog',
+        'Album'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

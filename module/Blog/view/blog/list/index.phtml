@@ -1,9 +1,15 @@
 <!-- Filename: /module/Blog/view/blog/list/index.phtml -->
-<h1>Blog</h1>
+<h1>My blog</h1>
 
 <?php foreach ($this->posts as $post): ?>
     <article>
-        <h1 id="post<?= $post->getId() ?>"><?= $post->getTitle() ?></h1>
+        <h3 id="post<?= $post->getId() ?>">
+            <a href="<?php echo $this->url('blog/detail',
+                array(
+                    'action'=>'detail',
+                    'id' => $post->getId()
+                ));?>"><?= $post->getTitle() ?></a>
+        </h3>
         <p>
             <?= $post->getText() ?>
         </p>
