@@ -3,23 +3,19 @@ Zend Framework 2 tutorials code
 
 "Album" Module
 ------------
-User Guide
-
+###User Guide
 <http://zf2.readthedocs.io/en/latest/user-guide/overview.html>
 
-Using Zend\Navigation in your Album Module
-
+###Using Zend\Navigation in your Album Module
 <http://zf2.readthedocs.io/en/latest/tutorials/tutorial.navigation.html>
 
-Using Zend\Paginator in your Album Module
-
+###Using Zend\Paginator in your Album Module
 <http://zf2.readthedocs.io/en/latest/tutorials/tutorial.pagination.html>
 
 
 "Blog" Module
 ------------
-In-depth tutorial for beginners
-
+###In-depth tutorial for beginners
 <http://zf2.readthedocs.io/en/latest/in-depth-guide/first-module.html>
 
 #### Error
