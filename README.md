@@ -19,6 +19,7 @@ Using Zend\Paginator in your Album Module
 "Blog" Module
 ------------
 In-depth tutorial for beginners
+
 <http://zf2.readthedocs.io/en/latest/in-depth-guide/first-module.html>
 
 #### Error
