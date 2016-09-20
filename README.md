@@ -4,12 +4,15 @@ Zend Framework 2 tutorials code
 "Album" Module
 ------------
 User Guide
+
 <http://zf2.readthedocs.io/en/latest/user-guide/overview.html>
 
 Using Zend\Navigation in your Album Module
+
 <http://zf2.readthedocs.io/en/latest/tutorials/tutorial.navigation.html>
 
 Using Zend\Paginator in your Album Module
+
 <http://zf2.readthedocs.io/en/latest/tutorials/tutorial.pagination.html>
 
 
