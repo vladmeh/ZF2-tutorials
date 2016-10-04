@@ -3,6 +3,7 @@
 namespace Album\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\View\Model\ViewModel;
 use Album\Model\Album;
 use Album\Model\AlbumTable;
@@ -21,8 +22,19 @@ class AlbumController extends AbstractActionController
         // set the number of items per page to 10
         $paginator->setItemCountPerPage(10);
 
+        $cache = $this->getServiceLocator()->get('cache');
+
+        $key    = 'albums';
+        $result = $cache->getItem($key);
+
+        if (!$result) {
+            $result = $this->getAlbumTable()->fetchAll();
+            $cache->setItem($key, $result);
+        }
+
+
         return new ViewModel(array(
-            //'albums' => $this->getAlbumTable()->fetchAll(),
+            //'albums' => $result,
             'paginator' => $paginator
         ));
     }

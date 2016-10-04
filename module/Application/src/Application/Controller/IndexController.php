@@ -18,6 +18,18 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        $cache   = \Zend\Cache\StorageFactory::factory(array(
+            'adapter' => array(
+                'name' => 'filesystem'
+            ),
+            'plugins' => array(
+                // Don't throw exceptions on cache errors
+                'exception_handler' => array(
+                    'throw_exceptions' => false
+                ),
+            )
+        ));
+
         return new ViewModel();
     }
 
