@@ -21,7 +21,26 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory'
-        )
+            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+            'Zend\Cache\StorageFactory' => function() {
+                return \Zend\Cache\StorageFactory::factory(array(
+                    'adapter' => array(
+                        'name' => 'filesystem',
+                        'options' => array(
+                            'cache_dir' => __DIR__.'/../../data/cache'
+                        ),
+                    ),
+                    'plugins' => array(
+                        // Don't throw exceptions on cache errors
+                        'exception_handler' => array(
+                            'throw_exceptions' => false
+                        ),
+                    )
+                ));
+            },
+        ),
+        'aliases' => array(
+            'cache' => 'Zend\Cache\StorageFactory',
+        ),
     ),
 );

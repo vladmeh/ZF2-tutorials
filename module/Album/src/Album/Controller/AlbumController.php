@@ -3,7 +3,6 @@
 namespace Album\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\View\Model\ViewModel;
 use Album\Model\Album;
 use Album\Model\AlbumTable;
